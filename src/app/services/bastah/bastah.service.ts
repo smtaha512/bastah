@@ -1,19 +1,31 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, pluck } from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { Observable, BehaviorSubject, of } from 'rxjs';
+import { map, pluck, switchMap, tap } from 'rxjs/operators';
+
 import {
   BastahInterface,
-  MenuInterface,
   KalamInterface,
+  MenuInterface,
 } from 'src/models/bastah.interface';
-import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class BastahService {
+  private readonly bastah: BehaviorSubject<
+    BastahInterface
+  > = new BehaviorSubject(null);
   constructor(private readonly http: HttpClient) {}
 
+  private getBastahFromJSON() {
+    return this.http
+      .get<BastahInterface>('/assets/bastah.json')
+      .pipe(tap((bastah) => this.bastah.next(bastah)));
+  }
+
   getBastah(): Observable<BastahInterface> {
-    return this.http.get<BastahInterface>('/assets/bastah.json');
+    return this.bastah.pipe(
+      switchMap((bastah) => (!bastah ? this.getBastahFromJSON() : of(bastah)))
+    );
   }
 
   getSections(): Observable<Pick<MenuInterface, 'id' | 'sectionName'>[]> {
