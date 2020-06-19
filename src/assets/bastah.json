@@ -1,0 +1,66 @@
+{
+  "sections": [
+    "qata",
+    "rubai",
+    "soaz",
+    "salam",
+    "marsiya",
+    "noha",
+    "hamd",
+    "mutafarriq",
+    "kisa",
+    "ziarat"
+  ],
+  "menu": [
+    {
+      "id": "qata",
+      "sectionName": "قطعات",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    },
+    {
+      "id": "rubai",
+      "sectionName": "رباعیات",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    },
+    {
+      "id": "soaz",
+      "sectionName": "سوز",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    },
+    {
+      "id": "salam",
+      "sectionName": "سلام",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    },
+    {
+      "id": "marsiya",
+      "sectionName": "مرثیے",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    },
+    {
+      "id": "noha",
+      "sectionName": "نوحہ/بین",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    },
+    {
+      "id": "hamd",
+      "sectionName": "حمد، نعت، مناقب",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    },
+    {
+      "id": "mutafarriq",
+      "sectionName": "متفرقات و قومیات",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    },
+    {
+      "id": "kisa",
+      "sectionName": "حدیثِ کساء",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    },
+    {
+      "id": "ziarat",
+      "sectionName": "زیارات",
+      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+    }
+  ]
+}
