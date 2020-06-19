@@ -28,9 +28,12 @@ export class BastahService {
     );
   }
 
+  getMenus(): Observable<MenuInterface[]> {
+    return this.getBastah().pipe(pluck('menu'));
+  }
+
   getSections(): Observable<Pick<MenuInterface, 'id' | 'sectionName'>[]> {
-    return this.getBastah().pipe(
-      pluck('menu'),
+    return this.getMenus().pipe(
       map((menu) =>
         menu.map((section) => ({
           sectionName: section.sectionName,
@@ -41,15 +44,13 @@ export class BastahService {
   }
 
   getSectionById(id: string): Observable<MenuInterface> {
-    return this.getBastah().pipe(
-      pluck('menu'),
+    return this.getMenus().pipe(
       map((menu) => menu.find((section) => section.id === id))
     );
   }
 
   getKalamById(id: string): Observable<KalamInterface> {
-    return this.getBastah().pipe(
-      pluck('menu'),
+    return this.getMenus().pipe(
       map((menu) => menu.map((section) => section.kalams)),
       map((kalams) => ([] as KalamInterface[]).concat(...kalams)),
       map((kalams) => kalams.find((kalam) => kalam.id === id))
