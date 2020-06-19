@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "projects-center"
+  },
+  "targets": {
+    "projects-center": {
+      "hosting": {
+        "bastah-its": [
+          "bastah-its"
+        ]
+      }
+    }
+  }
+}
