@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-size: 1.5rem;" class="ion-padding"
+      >{{ (kalam$ | async)?.name }}</ion-title
+    >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item
+      *ngFor="let item of (kalam$ | async)?.ashaar"
+      style="font-size: 1.25rem;"
+    >
+      <ion-label class="ion-padding-start">{{ item }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

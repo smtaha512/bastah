@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, pluck } from 'rxjs/operators';
-import { BastahInterface, MenuInterface } from 'src/models/bastah.interface';
+import {
+  BastahInterface,
+  MenuInterface,
+  KalamInterface,
+} from 'src/models/bastah.interface';
 import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
@@ -28,6 +32,15 @@ export class BastahService {
     return this.getBastah().pipe(
       pluck('menu'),
       map((menu) => menu.find((section) => section.id === id))
+    );
+  }
+
+  getKalamById(id: string): Observable<KalamInterface> {
+    return this.getBastah().pipe(
+      pluck('menu'),
+      map((menu) => menu.map((section) => section.kalams)),
+      map((kalams) => ([] as KalamInterface[]).concat(...kalams)),
+      map((kalams) => kalams.find((kalam) => kalam.id === id))
     );
   }
 }

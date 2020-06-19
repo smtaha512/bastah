@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'sub-menu',
     loadChildren: () => import('./pages/sub-menu/sub-menu.module').then( m => m.SubMenuPageModule)
   },
+  {
+    path: 'kalam',
+    loadChildren: () => import('./pages/kalam/kalam.module').then( m => m.KalamPageModule)
+  },
 ];
 
 @NgModule({

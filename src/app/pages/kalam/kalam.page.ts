@@ -4,27 +4,26 @@ import { Observable } from 'rxjs';
 import { pluck, shareReplay, switchMap } from 'rxjs/operators';
 
 import { BastahService } from 'src/app/services/bastah/bastah.service';
-import { MenuInterface } from 'src/models/bastah.interface';
+import { KalamInterface } from 'src/models/bastah.interface';
 
 @Component({
-  selector: 'app-sub-menu',
-  templateUrl: './sub-menu.page.html',
-  styleUrls: ['./sub-menu.page.scss'],
+  selector: 'app-kalam',
+  templateUrl: './kalam.page.html',
+  styleUrls: ['./kalam.page.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SubMenuPage implements OnInit {
-  section$: Observable<MenuInterface>;
-
+export class KalamPage implements OnInit {
+  kalam$: Observable<KalamInterface>;
   constructor(
-    private readonly route: ActivatedRoute,
+    private readonly activatedRoute: ActivatedRoute,
     private readonly bastah: BastahService
   ) {}
 
   ngOnInit() {
-    this.section$ = this.route.params.pipe(
+    this.kalam$ = this.activatedRoute.params.pipe(
       pluck('id'),
-      switchMap((id) => this.bastah.getSectionById(id)),
-      shareReplay({ refCount: true, bufferSize: 1 })
+      switchMap((id) => this.bastah.getKalamById(id)),
+      shareReplay({ bufferSize: 1, refCount: true })
     );
   }
 }
