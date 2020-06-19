@@ -1,5 +1,5 @@
 <ion-app>
-  <ion-split-pane contentId="main-menu" when="md">
+  <ion-split-pane contentId="main-menu" when="md" [disabled]="false">
     <ion-menu
       [disabled]="shouldDisableMenu$ | async"
       contentId="main-menu"
@@ -11,6 +11,6 @@
         <app-menu></app-menu>
       </ion-content>
     </ion-menu>
+    <ion-router-outlet id="main-menu"></ion-router-outlet>
   </ion-split-pane>
-  <ion-router-outlet id="main-menu"></ion-router-outlet>
 </ion-app>
