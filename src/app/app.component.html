@@ -1,3 +1,23 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-split-pane contentId="main-menu" when="md" [disabled]="false">
+    <ion-router-outlet id="main-menu"></ion-router-outlet>
+    <ion-menu contentId="main-menu" menuId="main-menu" side="start" type="push">
+      <ion-content>
+        <ion-card class="ion-text-center stick-to-top">
+          <img src="assets/its_logo.png" style="height: 100px;" alt="بستہ" />
+          <ion-card-header>
+            <ion-card-title style="font-size: 3rem;">بستہ</ion-card-title>
+            <ion-card-subtitle>فہرست</ion-card-subtitle>
+          </ion-card-header>
+        </ion-card>
+        <ion-list inset>
+          <ion-item *ngFor="let section of sections" lines="full" button>
+            <ion-label style="font-size: 1.25rem;">{{
+              section.displayText
+            }}</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+  </ion-split-pane>
 </ion-app>

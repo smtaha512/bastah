@@ -1,27 +1,22 @@
-import { Component } from '@angular/core';
-
-import { Platform } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.scss']
+  styleUrls: ['app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  constructor(
-    private platform: Platform,
-    private splashScreen: SplashScreen,
-    private statusBar: StatusBar
-  ) {
-    this.initializeApp();
-  }
-
-  initializeApp() {
-    this.platform.ready().then(() => {
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-    });
-  }
+  readonly sections = [
+    { displayText: 'قطعات', value: 'qata' },
+    { displayText: 'رباعیات', value: 'rubai' },
+    { displayText: 'سوز', value: 'soaz' },
+    { displayText: 'سلام', value: 'salam' },
+    { displayText: 'مرثیے', value: 'marsiya' },
+    { displayText: 'نوحہ/بین', value: 'noha' },
+    { displayText: 'حمد، نعت، مناقب', value: 'hamd' },
+    { displayText: 'متفرقات و قومیات', value: 'mutafarriq' },
+    { displayText: 'حدیثِ کساء', value: 'kisa' },
+    { displayText: 'زیارات', value: 'ziarat' },
+  ];
 }
