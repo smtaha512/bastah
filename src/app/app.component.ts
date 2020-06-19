@@ -1,4 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -6,17 +9,16 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['app.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
-  readonly sections = [
-    { displayText: 'قطعات', value: 'qata' },
-    { displayText: 'رباعیات', value: 'rubai' },
-    { displayText: 'سوز', value: 'soaz' },
-    { displayText: 'سلام', value: 'salam' },
-    { displayText: 'مرثیے', value: 'marsiya' },
-    { displayText: 'نوحہ/بین', value: 'noha' },
-    { displayText: 'حمد، نعت، مناقب', value: 'hamd' },
-    { displayText: 'متفرقات و قومیات', value: 'mutafarriq' },
-    { displayText: 'حدیثِ کساء', value: 'kisa' },
-    { displayText: 'زیارات', value: 'ziarat' },
-  ];
+export class AppComponent implements OnInit {
+  shouldDisableMenu$: Observable<boolean> = of(false);
+
+  constructor(private readonly router: Router) {}
+
+  ngOnInit(): void {
+    this.shouldDisableMenu$ = this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map((event: NavigationEnd) => event.urlAfterRedirects),
+      map((url) => url === '/home')
+    );
+  }
 }
