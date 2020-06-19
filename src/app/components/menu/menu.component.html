@@ -6,7 +6,12 @@
   </ion-card-header>
 </ion-card>
 <ion-list inset>
-  <ion-item *ngFor="let section of sections$ | async" button lines="full">
+  <ion-item
+    *ngFor="let section of sections$ | async"
+    [routerLink]="['/sub-menu', section.id]"
+    button
+    lines="full"
+  >
     <ion-label style="font-size: 1.25rem;">{{ section.sectionName }}</ion-label>
   </ion-item>
 </ion-list>

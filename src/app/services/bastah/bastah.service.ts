@@ -23,4 +23,11 @@ export class BastahService {
       )
     );
   }
+
+  getSectionById(id: string): Observable<MenuInterface> {
+    return this.getBastah().pipe(
+      pluck('menu'),
+      map((menu) => menu.find((section) => section.id === id))
+    );
+  }
 }
