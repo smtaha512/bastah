@@ -9,7 +9,8 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "deploy:fb": "ng build --prod --vendor-chunk --common-chunk && firebase deploy --only hosting:bastah-its"
   },
   "private": true,
   "dependencies": {
