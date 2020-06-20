@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { SubMenuPageRoutingModule } from './sub-menu-routing.module';
 
 import { SubMenuPage } from './sub-menu.page';
+import { ArabicModule } from 'src/app/pipes/arabic/arabic.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SubMenuPageRoutingModule
+    SubMenuPageRoutingModule,
+    ArabicModule,
   ],
-  declarations: [SubMenuPage]
+  declarations: [SubMenuPage],
 })
 export class SubMenuPageModule {}

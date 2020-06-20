@@ -15,9 +15,11 @@
       *ngFor="let kalam of (section$ | async)?.kalams"
       [routerLink]="['/kalam', kalam.id ]"
     >
-      <ion-label class="ion-padding-start" style="font-size: 1.25rem;"
-        >{{ kalam.name }}</ion-label
-      >
+      <ion-label
+        class="ion-padding-start"
+        style="font-size: 1.25rem;"
+        [innerHTML]="kalam.name | arabic"
+      ></ion-label>
     </ion-item>
   </ion-list>
 </ion-content>

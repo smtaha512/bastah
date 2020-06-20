@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { KalamPageRoutingModule } from './kalam-routing.module';
 
 import { KalamPage } from './kalam.page';
+import { ArabicModule } from 'src/app/pipes/arabic/arabic.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    KalamPageRoutingModule
+    KalamPageRoutingModule,
+    ArabicModule,
   ],
-  declarations: [KalamPage]
+  declarations: [KalamPage],
 })
 export class KalamPageModule {}
