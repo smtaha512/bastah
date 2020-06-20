@@ -392,7 +392,7 @@
     {
       "id": "soaz",
       "sectionName": "سوز",
-      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+      "kalams": []
     },
     {
       "id": "salam",
@@ -555,32 +555,32 @@
     {
       "id": "marsiya",
       "sectionName": "مرثیے",
-      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+      "kalams": []
     },
     {
       "id": "noha",
       "sectionName": "نوحہ/بین",
-      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+      "kalams": []
     },
     {
       "id": "hamd",
       "sectionName": "حمد، نعت، مناقب",
-      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+      "kalams": []
     },
     {
       "id": "mutafarriq",
       "sectionName": "متفرقات و قومیات",
-      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+      "kalams": []
     },
     {
       "id": "kisa",
       "sectionName": "حدیثِ کساء",
-      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+      "kalams": []
     },
     {
       "id": "ziarat",
       "sectionName": "زیارات",
-      "kalams": [{ "id": "", "name": "", "ashaar": [] }]
+      "kalams": []
     }
   ]
 }
