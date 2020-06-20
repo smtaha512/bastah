@@ -1,4 +1,10 @@
-ion-label ::ng-deep .arabic {
-  font-family: Lateef, Nastaliq, cursive !important;
-  font-size: 2rem;
+ion-label {
+  &::ng-deep .arabic {
+    font-family: Lateef, Nastaliq, cursive !important;
+    font-size: 2rem;
+  }
+  &:not(.has-arabic) {
+    text-align: justify;
+    text-align-last: justify;
+  }
 }

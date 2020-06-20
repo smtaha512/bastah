@@ -12,9 +12,13 @@
 <ion-content>
   <ion-list>
     <ion-item
-      *ngFor="let kalam of (section$ | async)?.kalams"
+      *ngFor="let kalam of (section$ | async)?.kalams; let i = index;"
       [routerLink]="['/kalam', kalam.id ]"
+      class="ion-text-wrap"
     >
+      <ion-text>
+        {{ i + 1 }}
+      </ion-text>
       <ion-label
         class="ion-padding-start"
         style="font-size: 1.25rem;"
