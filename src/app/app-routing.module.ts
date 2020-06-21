@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'kalam',
     loadChildren: () => import('./pages/kalam/kalam.module').then( m => m.KalamPageModule)
   },
+  {
+    path: 'ziarat',
+    loadChildren: () => import('./pages/ziarat/ziarat.module').then( m => m.ZiaratPageModule)
+  },
 ];
 
 @NgModule({

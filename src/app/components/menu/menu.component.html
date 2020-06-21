@@ -8,7 +8,9 @@
 <ion-list inset>
   <ion-item
     *ngFor="let section of sections$ | async"
-    [routerLink]="['/sub-menu', section.id]"
+    [routerLink]="
+      section.id === 'ziarat' ? ['/ziarat'] : ['/sub-menu', section.id]
+    "
     button
     lines="full"
   >
