@@ -7,6 +7,9 @@
       "hosting": {
         "bastah-its": [
           "bastah-its"
+        ],
+        "bastah-static": [
+          "bastah-static"
         ]
       }
     }
