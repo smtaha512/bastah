@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-button (click)="closeModal()" fill="clear">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+      <ion-searchbar
+        placeholder="کلام تلاش کریں"
+        inputmode="text"
+        type="text"
+        (ionChange)="onSearchChange($event)"
+        [debounce]="250"
+      ></ion-searchbar>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list *ngFor="let menu of menus$ | async">
+    <ion-list-header>
+      <ion-label>{{ menu.sectionName }}</ion-label>
+    </ion-list-header>
+    <ion-item
+      *ngFor="
+        let kalam of menu.kalams | search: (search$ | async);
+        trackBy: trackBy
+      "
+      (click)="openKalam(kalam.id)"
+    >
+      <ion-label [innerHTML]="kalam.name | arabic" class="verse"> </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

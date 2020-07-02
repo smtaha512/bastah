@@ -1,0 +1,17 @@
+ion-item {
+  font-size: 1rem;
+}
+ion-label.verse {
+  &::ng-deep .arabic {
+    font-family: Lateef, Nastaliq, cursive !important;
+    font-size: 1.75rem;
+  }
+  text-align: justify;
+  text-align-last: justify;
+  overflow: visible !important;
+  word-wrap: break-word !important;
+
+  &::after {
+    content: attr(verse);
+  }
+}

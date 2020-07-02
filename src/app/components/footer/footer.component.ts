@@ -9,6 +9,8 @@ import {
 } from '@angular/core';
 import { BehaviorSubject, Subscription } from 'rxjs';
 import { filter, first, scan, shareReplay, tap } from 'rxjs/operators';
+import { ModalController } from '@ionic/angular';
+import { SearchComponent } from '../search/search.component';
 
 @Component({
   selector: 'app-footer',
@@ -26,7 +28,8 @@ export class FooterComponent implements OnInit, OnDestroy {
   private readonly subscription = new Subscription();
   constructor(
     private readonly renderer: Renderer2,
-    @Inject(DOCUMENT) private readonly document: Document
+    @Inject(DOCUMENT) private readonly document: Document,
+    private readonly modalController: ModalController
   ) {}
 
   ngOnInit() {}
@@ -44,6 +47,13 @@ export class FooterComponent implements OnInit, OnDestroy {
         )
         .subscribe()
     );
+  }
+
+  async openSearch() {
+    const modal = await this.modalController.create({
+      component: SearchComponent,
+    });
+    modal.present();
   }
 
   private canZoom(timesZoom: number, inOutFactor: number) {
