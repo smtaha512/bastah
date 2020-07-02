@@ -8,6 +8,7 @@ import { KalamPageRoutingModule } from './kalam-routing.module';
 
 import { KalamPage } from './kalam.page';
 import { ArabicModule } from 'src/app/pipes/arabic/arabic.module';
+import { FooterModule } from 'src/app/components/footer/footer.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ArabicModule } from 'src/app/pipes/arabic/arabic.module';
     IonicModule,
     KalamPageRoutingModule,
     ArabicModule,
+    FooterModule,
   ],
   declarations: [KalamPage],
 })

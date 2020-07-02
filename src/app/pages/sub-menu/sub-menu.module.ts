@@ -8,6 +8,7 @@ import { SubMenuPageRoutingModule } from './sub-menu-routing.module';
 
 import { SubMenuPage } from './sub-menu.page';
 import { ArabicModule } from 'src/app/pipes/arabic/arabic.module';
+import { FooterModule } from 'src/app/components/footer/footer.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ArabicModule } from 'src/app/pipes/arabic/arabic.module';
     IonicModule,
     SubMenuPageRoutingModule,
     ArabicModule,
+    FooterModule,
   ],
   declarations: [SubMenuPage],
 })

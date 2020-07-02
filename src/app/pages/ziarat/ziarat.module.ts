@@ -7,14 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { ZiaratPageRoutingModule } from './ziarat-routing.module';
 
 import { ZiaratPage } from './ziarat.page';
+import { FooterModule } from 'src/app/components/footer/footer.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ZiaratPageRoutingModule
+    ZiaratPageRoutingModule,
+    FooterModule,
   ],
-  declarations: [ZiaratPage]
+  declarations: [ZiaratPage],
 })
 export class ZiaratPageModule {}

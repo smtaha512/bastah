@@ -6,6 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { CardMenuModule } from '../components/card-menu/card-menu.module';
+import { FooterModule } from '../components/footer/footer.module';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { CardMenuModule } from '../components/card-menu/card-menu.module';
     IonicModule,
     HomePageRoutingModule,
     CardMenuModule,
+    FooterModule,
   ],
   declarations: [HomePage],
 })
