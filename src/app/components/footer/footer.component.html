@@ -2,7 +2,13 @@
   <ion-grid>
     <ion-row>
       <ion-col size="2" offset="1">
-        <ion-button color="dark" expand="block" fill="outline">
+        <ion-button
+          (click)="zoom(-1)"
+          [disabled]="(timesZoom$ | async) <= 1"
+          color="dark"
+          expand="block"
+          fill="outline"
+        >
           <ion-icon
             slot="icon-only"
             src="/assets/icons/zoom-out.svg"
@@ -10,7 +16,13 @@
         </ion-button>
       </ion-col>
       <ion-col size="2">
-        <ion-button color="dark" expand="block" fill="outline">
+        <ion-button
+          (click)="zoom(1)"
+          [disabled]="(timesZoom$ | async) >= 5"
+          color="dark"
+          expand="block"
+          fill="outline"
+        >
           <ion-icon slot="icon-only" src="/assets/icons/zoom-in.svg"></ion-icon>
         </ion-button>
       </ion-col>

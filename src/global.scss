@@ -39,3 +39,8 @@ body {
 * {
   font-family: Nastaliq !important;
 }
+
+:root {
+  --root-font-size: 16px;
+  font-size: var(--root-font-size, 16px);
+}
