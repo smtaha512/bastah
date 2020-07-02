@@ -11,32 +11,25 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid class="ion-no-padding">
+  <ion-grid>
     <ion-row
       *ngFor="let item of (kalam$ | async)?.ashaar; let even = even; let odd = odd"
     >
-      <ion-col *ngIf="even" class="ion-no-padding" sizeMd="10" sizeLg="8">
-        <ion-item lines="none" style="font-size: 1.25rem;">
+      <ion-col *ngIf="even" sizeMd="10" sizeLg="8">
+        <ion-item lines="none">
           <ion-label
             [innerHTML]="item | arabic"
             [ngClass]="{'has-arabic': item.includes('arabic')}"
-            class="ion-padding-start"
+            class="ion-padding-horizontal"
           ></ion-label>
         </ion-item>
       </ion-col>
-      <ion-col
-        *ngIf="odd"
-        class="ion-no-padding"
-        pushLg="4"
-        pushMd="2"
-        sizeLg="8"
-        sizeMd="10"
-      >
-        <ion-item lines="none" style="font-size: 1.25rem;">
+      <ion-col *ngIf="odd" pushLg="4" pushMd="2" sizeLg="8" sizeMd="10">
+        <ion-item lines="none">
           <ion-label
             [innerHTML]="item | arabic"
             [ngClass]="{'has-arabic': item.includes('arabic')}"
-            class="ion-padding-start"
+            class="ion-padding-horizontal"
           ></ion-label>
         </ion-item>
       </ion-col>

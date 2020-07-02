@@ -1,15 +1,18 @@
+ion-item {
+  font-size: 1rem;
+}
 ion-label {
   & ::ng-deep .arabic {
     font-family: Lateef, Nastaliq, cursive !important;
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
-  &:not(.has-arabic) {
-    text-align: justify;
-    text-align-last: justify;
-  }
+  text-align: justify;
+  text-align-last: justify;
+  overflow: visible !important;
+  word-wrap: break-word !important;
 }
 
 ion-title ::ng-deep .arabic {
   font-family: Lateef, Nastaliq, cursive !important;
-  font-size: 2.5rem;
+  font-size: 2rem;
 }
