@@ -26,4 +26,10 @@ export class KalamPage implements OnInit {
       shareReplay({ bufferSize: 1, refCount: true })
     );
   }
+
+  getNumber(i: number) {
+    // ? This is shown on every kalam type but should be shown only on marsiya
+    // const nextNumber = i - 5 * (i / 6);
+    // return String.fromCharCode(1777 + nextNumber);
+  }
 }

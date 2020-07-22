@@ -16,3 +16,9 @@ ion-title ::ng-deep .arabic {
   font-family: Lateef, Nastaliq, cursive !important;
   font-size: 2rem;
 }
+
+ion-col::before {
+  content: attr(data-number);
+  display: flex;
+  justify-content: center;
+}

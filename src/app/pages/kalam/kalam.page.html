@@ -13,9 +13,14 @@
 <ion-content>
   <ion-grid>
     <ion-row
-      *ngFor="let item of (kalam$ | async)?.ashaar; let even = even; let odd = odd"
+      *ngFor="let item of (kalam$ | async)?.ashaar; let even = even; let odd = odd; let i = index"
     >
-      <ion-col *ngIf="even" sizeMd="10" sizeLg="8">
+      <ion-col
+        *ngIf="even"
+        sizeMd="10"
+        sizeLg="8"
+        [attr.data-number]="i % 6 === 0 ? getNumber(i) : ''"
+      >
         <ion-item lines="none">
           <ion-label
             [innerHTML]="item | arabic"
