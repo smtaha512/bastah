@@ -22,3 +22,17 @@ ion-col::before {
   display: flex;
   justify-content: center;
 }
+
+.transition {
+  transition: all ease-in 200ms;
+}
+
+.slide-down {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(-100px);
+}
